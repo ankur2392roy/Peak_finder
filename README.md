@@ -1,1 +1,1 @@
-# Peak_finder
+# PeakFinder
