@@ -5,11 +5,8 @@ from astropy.modeling import models, fitting
 import os
 
 
-def significant_peaks(file,snr_threshold):
-    #file = "HD209458b_syn_data.dat"
-    #file = input("Enter the input spectrum with three cols (wavelength, transit depth, error on transit transit_depth): ")
-    #snr_threshold = 10
-    #snr_threshold = float(input("Enter snr threshold: "))
+def significant_peaks(file,template_file,snr_threshold):
+    
     wave              = np.loadtxt(file, unpack=True,usecols=0)
     transit_depth     = np.loadtxt(file, unpack=True,usecols=1)
     transit_depth_err = np.loadtxt(file, unpack=True,usecols=2)
@@ -20,8 +17,7 @@ def significant_peaks(file,snr_threshold):
 
     prominence = peak_prominences(transit_depth,indices)
     peak_prominence = prominence[0]
-    #left_base = prominence[1]
-    #light_base = prominence[2]
+
     snr = peak_prominence/transit_depth_err[indices]
 
     significant_peaks = []
@@ -37,45 +33,27 @@ def significant_peaks(file,snr_threshold):
             significant_peaks_error.append(transit_depth_err[indices[i]])
             wave_left.append(wave[rel_min[i]])
             wave_right.append(wave[rel_min[i+1]])
-            
+        
+    
 
-    #print(len(significant_peaks), len(line_center),len(significant_peaks_error))
-    return line_center,wave_left,wave_right,significant_peaks,wave,transit_depth
-
-
-
-def peak_identifier(template_file):
     mean_values=[]
     stddev_values=[]
-    for i in range(len(l_base)):
+    for i in range(len(line_center)):
         amp=significant_peaks[i]
         per=line_center[i]
         
-        #a = np.where(np.logical_and(wave >= l_base[i], wave <= r_base[i]))[0]
-        #print(a,wave[a[0]:a[len(a)]])
+
         x=[]
         y=[]
         for j in range(len(wave)):
-            if wave[j] >= l_base[i] and wave[j] <= r_base[i]:
+            if wave[j] >= wave_left[i] and wave[j] <= wave_right[i]:
                 x.append(wave[j])
                 y.append(transit_depth[j])
 
-        
-        # k=np.where(a)[0]
-        # #print(k)
-        # x=wave[k[0]:k[-1]]
-        # y=transit_depth[k[0]:k[-1]]
-        #x = wave[l_base[i]:r_base[i]]
-        #y = transit_depth[l_base[i]:r_base[i]]
 
         gg_init = models.Gaussian1D(amp, per,1)
-        #fitter = fitting.SLSQPLSQFitter()
         fitter = fitting.LevMarLSQFitter()
         gg_fit = fitter(gg_init, x, y)
-        # plt.plot(x,y)
-        # plt.plot(x,gg_fit(x))
-        # plt.show()
-        #print(gg_fit.mean.value,gg_fit.stddev.value)
         mean_values.append(gg_fit.mean.value)
         stddev_values.append(gg_fit.stddev.value)
 
@@ -105,3 +83,5 @@ def peak_identifier(template_file):
         with open(path+'/'+'output.txt','w') as f:
             for x,y in zip(species,identifier):
                 f.write('{} is present at {} microns \n'.format(x,y))
+
+    return significant_peaks,line_center
