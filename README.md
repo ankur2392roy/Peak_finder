@@ -1,4 +1,4 @@
-# PeakFinder
+# Peak_finder
 This package is intended to identify known spectral signatures from multiple spectra of exoplanet atmospheres and produce them as results.
 It is helpful to give a primary estimate of the lines present in a spectrum where the Signal-to-Noise ratio of the data can be user defined, without manual intervention.
 
