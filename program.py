@@ -2,7 +2,6 @@
 import numpy as np
 from scipy.signal import find_peaks, peak_prominences, argrelextrema
 import matplotlib.pyplot as plt
-from lmfit import Model
 from astropy.modeling import models, fitting
 import os
 
