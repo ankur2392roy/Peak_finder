@@ -36,13 +36,19 @@ def significant_peaks(file,snr_threshold):
 			l_base.append(wave[left_base[i]])
 			r_base.append(wave[right_base[i]])
 
-	return line_center,l_base,r_base,significant_peaks
+	return line_center,l_base,r_base,significant_peaks,wave,transit_depth
 
 
-l_base = significant_peaks('HD.txt',10)[1]
-r_base = significant_peaks('HD.txt',10)[2]
-line_center = significant_peaks('HD.txt',10)[0]
-significant_peaks = significant_peaks('HD.txt',10)[3]
+p = significant_peaks('HD.txt',20)
+
+l_base = p[1]
+r_base = p[2]
+line_center = p[0]
+wave = p[4]
+transit_depth = p[5]
+significant_peaks = p[3]
+
+
 
 
 
@@ -55,7 +61,7 @@ def peak_identifier(template_file):
 		a = np.logical_and(wave >= l_base[i], wave <= r_base[i])
 		k=np.where(a)[0]
 		x=wave[k[0]:k[-1]]
-		y=significant_peaks[k[0]:k[-1]]
+		y=transit_depth[k[0]:k[-1]]
 		gg_init = models.Gaussian1D(amp, per, 1)
 		fitter = fitting.SLSQPLSQFitter()
 		gg_fit = fitter(gg_init, x, y)
@@ -90,5 +96,5 @@ def peak_identifier(template_file):
 				f.write('{} is present at {} microns \n'.format(x,y))
 
 
-significant_peaks('HD.txt',10)
-#peak_identifier('test.txt')
+#significant_peaks('HD.txt',10)
+peak_identifier('test.txt')
