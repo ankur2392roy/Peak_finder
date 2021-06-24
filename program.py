@@ -124,4 +124,4 @@ def peak_identifier(template_file):
 
 
 #significant_peaks('HD.txt',10)
-peak_identifier('test.txt')
+peak_identifier('Table.txt')
