@@ -87,7 +87,7 @@ def significant_peaks(file,template_file,snr_threshold):
         with open(path+'/'+'statistics_output.txt','w') as f:
             f.write('Mean   Standard_deviation \n')
             for x,y in zip(mean_values,stddev_values):                
-                f.write('{} {} \n'.format(x,y))
-                f.write(" ")
+                f.write('{} {} \n'.format(round(x,4),round(y,4)))
+                #f.write(" ")
 
     return significant_peaks,line_center
