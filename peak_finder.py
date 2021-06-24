@@ -84,4 +84,8 @@ def significant_peaks(file,template_file,snr_threshold):
             for x,y in zip(species,identifier):
                 f.write('{} is present at {} microns \n'.format(x,y))
 
+        with open(path+'/'+'statistics_output.txt','w') as f:
+            for x,y in zip(mean_values,stddev_values):
+                f.write('{} {} \n'.format(x,y))
+
     return significant_peaks,line_center
