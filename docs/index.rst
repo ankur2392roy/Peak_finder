@@ -1,21 +1,27 @@
-.. peak_finder documentation master file, created by
-   sphinx-quickstart on Thu Jun 24 23:20:46 2021.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
 Welcome to `peak_finder`'s documentation!
 =======================================
 
+This package is intended to identify known spectral signatures from a given exoplanet atmospheric tramsmission spectrum and produce them as results.
+It is helpful to give a primary estimate of the lines present in a spectrum where the Signal-to-Noise ratio of the data can be user defined, without manual intervention.
+
+Outputs
++++++++++++
+
+1. A file called output.txt listing all the elements (or species) found in the spectra at their respective wavelengths.
+2. A file called statistics_output.txt listing the results from Gaussian fits to individual significant peaks in the signal.
+3. Plot with identified peaks in the spectrum.
+
+Installation instructions
++++++++++++
+
+After cloning the repository, run this:
+
+```pip install -r requirements.txt -e .```
+
+User Guide:
++++++++++++
 .. toctree::
    :maxdepth: 2
 
    tutorial
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
