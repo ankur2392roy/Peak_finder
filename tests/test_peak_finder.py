@@ -16,14 +16,14 @@ def test_significant_peaks():
     data_file = 'tests/HD209458b_syn_data.dat'
     #mol_table_file = os.path.abspath(os.path.join(os.path.dirname(__file__),'Table_test.txt'))
     #print(mol_table_file)
-    mol_table_file = 'tests/Table_test.txt'
+    spec_table_file = 'tests/Table_test.txt'
 
     #data_file = os.path.abspath('HD209458b_syn_data.dat')
     #mol_table_file = os.path.abspath('Table_test.txt')
 
     snr=10
 
-    unique_species, all_positions  = significant_peaks(data_file,mol_table_file,snr)
+    unique_species, all_positions  = significant_peaks(data_file,spec_table_file,snr)
 
     assert unique_species[0] == 'H2O'
     assert all_positions[0][0] == 1.4234
