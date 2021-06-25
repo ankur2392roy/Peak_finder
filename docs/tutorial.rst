@@ -5,4 +5,4 @@ Tutorial
 .. toctree::
    :maxdepth: 1
 
-   quick_tutorial.ipynb
+   tutorial/quick_tutorial.ipynb
