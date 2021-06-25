@@ -22,3 +22,7 @@ After cloning the repository, run this:
 After installing the package, you can refer to this example notebook inside ```docs/tutorial``` for an example implementation of ```peak_finder```. 
 
 [Finding peaks for HD209458b synthetic data](https://nbviewer.jupyter.org/github/ankur2392roy/Peak_finder/blob/main/docs/tutorial/quick_tutorial.ipynb)
+
+## Documentation
+
+Step into the `docs/` directory and run `make html` to get a nice set of html documentation files, which can be found inside the `docs/_build/html` folder
