@@ -7,3 +7,9 @@ It is helpful to give a primary estimate of the lines present in a spectrum wher
 1. A file called output.txt listing all the elements (or species) found in the spectra at which wavelength.
 2. A file called statistics_output.tt listing the results from our fitting exxercise on the significant peaks in th signal.
 3. A set of plots concerning the spectra and the identified peaks.
+
+## Installation instructions
+
+After cloning the repository, run this:
+
+```pip install -r requirements.txt -e .```
