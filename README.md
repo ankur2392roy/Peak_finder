@@ -15,7 +15,7 @@ It is helpful to have an autmoted way to get an estimate of the possible molecul
 
 After cloning the repository, run this:
 
-```pip install -r requirements.txt -e .```
+```pip install -r requirements.txt .```
 
 ## Example Notebook 
 
