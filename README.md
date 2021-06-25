@@ -13,3 +13,9 @@ It is helpful to give a primary estimate of the lines present in a spectrum wher
 After cloning the repository, run this:
 
 ```pip install -r requirements.txt -e .```
+
+## Example Notebook 
+
+After installing the package, you can refer to the notebook inside docs/tutorial for an example implementation of ```peak_finder```. 
+
+[ipython notebook](https://github.com/ankur2392roy/Peak_finder/blob/main/docs/tutorial/tutorial.ipynb)
