@@ -18,4 +18,4 @@ After cloning the repository, run this:
 
 After installing the package, you can refer to this example notebook inside ```docs/tutorial``` for an example implementation of ```peak_finder```. 
 
-[Finding peaks for HD209458b synthetic data](https://github.com/ankur2392roy/Peak_finder/blob/main/docs/tutorial/tutorial.ipynb)
+[Finding peaks for HD209458b synthetic data](https://github.com/ankur2392roy/Peak_finder/blob/main/docs/tutorial/quick_tutorial.ipynb)
