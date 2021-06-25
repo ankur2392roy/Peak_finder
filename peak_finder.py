@@ -169,20 +169,22 @@ def plot_peaks(species_list, positions_list, data, wav_data, err_data, num_featu
     elinewidth=2,)
 
     # plot molecules and vertical lines for their positions
-    vline_counter = 0
+    #vline_counter = 0
     for i,c in enumerate(color):
         for j,position in enumerate(positions_list[i]):
             if j==0:
                 ax.axvline(x=position, color=c, ls='--', alpha=0.5, label=species_list[i])
-                vline_counter += 1
+                #vline_counter += 1
             else:
                 ax.axvline(x=position, color=c, ls='--', alpha=0.5)
-                vline_counter += 1
+                #vline_counter += 1
     handles, labels = ax.get_legend_handles_labels()
     ax.legend(handles, labels, loc='center left', ncol=1, bbox_to_anchor=(1.01,0.5), fontsize=14)
+    ax.set_xlabel('Wavelength ($\mu$m)')
+    ax.set_ylabel('Transit depth')
 
     plt.tight_layout()
-    print(vline_counter)
+    #print(vline_counter)
 
     return fig, ax
             
