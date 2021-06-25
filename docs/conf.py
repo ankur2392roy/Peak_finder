@@ -18,8 +18,8 @@ sys.path.insert(0, os.path.abspath('../..'))
 # -- Project information -----------------------------------------------------
 
 project = 'peak_finder'
-copyright = '2021, A.P. Ravi, A.Roy, I. Mishra'
-author = 'A.P. Ravi, A.Roy, I. Mishra'
+copyright = '2021, A.P. Ravi, A. Roy, I. Mishra'
+author = 'A.P. Ravi, A. Roy, I. Mishra'
 master_doc='index'
 # The full version, including alpha/beta/rc tags
 release = 'v 0.1'
