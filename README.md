@@ -4,9 +4,9 @@ It is helpful to give a primary estimate of the lines present in a spectrum wher
 
 ## Outputs
 
-1. A file called output.txt listing all the elements (or species) found in the spectra at which wavelengths.
-2. A file called statistics_output.tt listing the results from our fitting exxercise on the significant peaks in th signal.
-3. A set of plots concerning the spectra and the identified peaks.
+1. A file called output.txt listing all the elements (or species) found in the spectra at their respective wavelengths.
+2. A file called statistics_output.txt listing the results from Gaussian fits to individual significant peaks in the signal.
+3. Plot with identified peaks in the spectrum.
 
 ## Installation instructions
 
